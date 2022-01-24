@@ -1,18 +1,18 @@
 {% set name = "od" %}
-{% set version = "1.0" %}
+{% set version = "2.0.1" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: d1c94cd3af5fdb13ca27c4d3e1601c77028f36bbba9e78c324daf0c1ac06e3ab
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 180fb0d13c3af1384047b8296c95683816b5d0c68a60c22d07c703be8bd755cb
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -26,12 +26,12 @@ test:
     - od
 
 about:
-  home: "https://github.com/epsy/od"
+  home: https://github.com/epsy/od
   license: MIT
   license_family: MIT
   license_file: LICENSE.txt
-  summary: "Shorthand syntax for building OrderedDicts"
-  dev_url: "https://github.com/epsy/od"
+  summary: Shorthand syntax for building OrderedDicts
+  dev_url: https://github.com/epsy/od
 
 extra:
   recipe-maintainers:
